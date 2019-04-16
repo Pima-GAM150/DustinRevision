@@ -1,8 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class Scroll : MonoBehaviour
+﻿public class Scroll : ChessPieceBase
 {
 	#region Variables
 	
@@ -27,12 +23,25 @@ public class Scroll : MonoBehaviour
 	{
         
 	}
-	
+
 	#endregion
-	
+
 	#region My Functions
-	
-	
-	
+
+	public override void Move()
+	{
+
+	}
+
+	public override void Attack()
+	{
+
+	}
+
+	public override void Death()
+	{
+
+	}
+
 	#endregion
 }

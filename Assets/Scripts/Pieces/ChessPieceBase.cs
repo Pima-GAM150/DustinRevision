@@ -1,12 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ChessPieceBase : MonoBehaviour
 {
 	#region Variables
 
-	public Animator MyAnimationController;
+	public Transform MoveTarget;
 
 	public PieceType MyType;
 
@@ -31,11 +29,12 @@ namespace UnityEngine
 {
 	public enum PieceType
 	{
-		King,
-		Queen,
-		Bishop,
-		Knight,
-		Rook,
-		Pawn
+		Ninja,
+		Kunoichi,
+		Katana,
+		Caltrops,
+		Scroll,
+		Kunai,
+		Shuriken
 	}
 }

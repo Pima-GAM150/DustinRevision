@@ -1,8 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class GirlNinja : MonoBehaviour
+﻿public class GirlNinja : ChessPieceBase
 {
 	#region Variables
 	
@@ -27,12 +23,25 @@ public class GirlNinja : MonoBehaviour
 	{
         
 	}
-	
+
 	#endregion
-	
+
 	#region My Functions
-	
-	
-	
+
+	public override void Move()
+	{
+
+	}
+
+	public override void Attack()
+	{
+
+	}
+
+	public override void Death()
+	{
+
+	}
+
 	#endregion
 }
