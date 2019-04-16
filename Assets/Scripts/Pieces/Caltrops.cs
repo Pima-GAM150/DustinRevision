@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Rook : MonoBehaviour
+public class Caltrops : MonoBehaviour
 {
 	#region Variables
 	

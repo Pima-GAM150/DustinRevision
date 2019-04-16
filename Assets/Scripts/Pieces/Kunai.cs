@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bishop : MonoBehaviour
+public class Kunai : MonoBehaviour
 {
 	#region Variables
 	

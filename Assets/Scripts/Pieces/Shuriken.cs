@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Queen : MonoBehaviour
+public class Shuriken : MonoBehaviour
 {
 	#region Variables
 	

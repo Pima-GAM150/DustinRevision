@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class King : MonoBehaviour
+public class Scroll : MonoBehaviour
 {
 	#region Variables
 	
