@@ -41,7 +41,7 @@ public class Board : MonoBehaviour
 					{
 						var space =	Instantiate(WhiteSpacePrefab, Vector3.zero, Quaternion.identity);
 
-						space.transform.SetParent(StartingPosition);
+						space.transform.SetParent(StartingPositionBoard);
 
 						space.transform.localPosition = new Vector3(-4 + w, 0, -4 + h);
 
@@ -53,7 +53,7 @@ public class Board : MonoBehaviour
 					{
 						var space = Instantiate(BlackSpacePrefab, Vector3.zero, Quaternion.identity);
 
-						space.transform.SetParent(StartingPosition);
+						space.transform.SetParent(StartingPositionBoard);
 
 						space.transform.localPosition = new Vector3(-4 + w, 0, -4 + h);
 
@@ -68,7 +68,7 @@ public class Board : MonoBehaviour
 					{
 						var space = Instantiate(BlackSpacePrefab, Vector3.zero, Quaternion.identity);
 
-						space.transform.SetParent(StartingPosition);
+						space.transform.SetParent(StartingPositionBoard);
 
 						space.transform.localPosition = new Vector3(-4 + w, 0, -4 + h);
 
@@ -80,7 +80,7 @@ public class Board : MonoBehaviour
 					{
 						var space = Instantiate(WhiteSpacePrefab, Vector3.zero, Quaternion.identity);
 
-						space.transform.SetParent(StartingPosition);
+						space.transform.SetParent(StartingPositionBoard);
 
 						space.transform.localPosition = new Vector3(-4 + w, 0, -4 + h);
 
