@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Dustin;
 
 public class ChessPieceBase : MonoBehaviour
 {
@@ -6,7 +7,11 @@ public class ChessPieceBase : MonoBehaviour
 
 	public Transform MoveTarget;
 
+	public Animator AnimationController;
+
 	public PieceType MyType;
+
+	public PieceColor MyColor;
 
 	#endregion
 
@@ -16,16 +21,25 @@ public class ChessPieceBase : MonoBehaviour
 
 	#region My Functions
 
-	public virtual void Move() { }
+	public virtual void Move()
+	{
 
-	public virtual void Attack() { }
+	}
 
-	public virtual void Death() { }
+	public virtual void Attack()
+	{
+
+	}
+
+	public virtual void Death()
+	{
+
+	}
 	
 	#endregion
 }
 
-namespace UnityEngine
+namespace UnityEngine.Dustin
 {
 	public enum PieceType
 	{

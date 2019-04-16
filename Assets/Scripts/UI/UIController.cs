@@ -45,6 +45,11 @@ public class UIController : MonoBehaviour
 		SceneManager.LoadScene("MainMenu");
 	}
 
+	public void LoadGame()
+	{
+		SceneManager.LoadScene("GameEnvironment");
+	}
+
 	private void PauseInputCheck()
 	{
 		if ((Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P)) && !paused)
