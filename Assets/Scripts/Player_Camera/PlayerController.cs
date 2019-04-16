@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
@@ -20,25 +21,48 @@ public class PlayerController : MonoBehaviour
 
 	private void Awake()
 	{
-		
-	}
-	
-	private void Start()
-	{
-       
+
 	}
 
-    
+	private void Start()
+	{
+
+	}
+
+
 	private void Update()
 	{
-        
+		CheckForMovement();
+		CheckForRotation();
+		CheckForPieceSelection();
+		CheckForMovementSelection();
 	}
-	
+
+
+
 	#endregion
-	
+
 	#region My Functions
-	
-	
-	
+
+	private void CheckForPieceSelection()
+	{
+		
+	}
+
+	private void CheckForMovementSelection()
+	{
+		
+	}
+
+	private void CheckForRotation()
+	{
+		
+	}
+
+	private void CheckForMovement()
+	{
+		
+	}
+
 	#endregion
 }

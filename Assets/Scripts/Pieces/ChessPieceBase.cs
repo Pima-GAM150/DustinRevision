@@ -37,4 +37,9 @@ namespace UnityEngine
 		Kunai,
 		Shuriken
 	}
+	public enum PieceColor
+	{
+		Black,
+		White
+	}
 }

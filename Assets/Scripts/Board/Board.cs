@@ -4,6 +4,8 @@ public class Board : MonoBehaviour
 {
 	#region Variables
 
+	public static Board Instance;
+
 	public GameObject BlackSpacePrefab , WhiteSpacePrefab;
 
 	public Transform StartingPositionBoard;
@@ -21,7 +23,11 @@ public class Board : MonoBehaviour
 		InstantiateBoard();
 
 		InstantiatePieces();
+
+		Instance = this;
 	}
+
+	
 	
 	#endregion
 
@@ -97,5 +103,10 @@ public class Board : MonoBehaviour
 
 	}
 
+	public void ResetBoard()
+	{
+
+	}
+	
 	#endregion
 }
