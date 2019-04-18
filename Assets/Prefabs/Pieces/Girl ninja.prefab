@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1381979079436087994}
   - component: {fileID: 4047161721918891633}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Girl ninja
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,4 +44,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoveTarget: {fileID: 0}
+  AnimationController: {fileID: 0}
   MyType: 1
+  MyColor: 0

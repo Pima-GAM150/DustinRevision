@@ -21,14 +21,18 @@ public class ChessPieceBase : MonoBehaviour
 
 	#region My Functions
 
-	public virtual void Move()
+	public virtual bool Move(Transform target)
 	{
+		Debug.LogFormat("Name:{0} Color:{1} Type:{2}\n",this.name,this.MyColor,this.MyType);
 
+		return true;
 	}
 
-	public virtual void Attack()
+	public virtual bool Attack(Transform target)
 	{
+		Debug.LogFormat("Name:{0} Pos:{1}", target.name, target.position);
 
+		return true;
 	}
 
 	public virtual void Death()

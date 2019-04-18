@@ -1,4 +1,7 @@
-﻿public class Ninja : ChessPieceBase
+﻿using UnityEngine;
+using UnityEngine.Dustin;
+
+public class Ninja : ChessPieceBase
 {
 	#region Variables
 	
@@ -28,14 +31,18 @@
 
 	#region My Functions
 
-	public override void Move()
+	public override bool Move(Transform target)
 	{
+		base.Move(target);
 
+		return true;
 	}
 
-	public override void Attack()
+	public override bool Attack(Transform target)
 	{
+		base.Move(target);
 
+		return true;
 	}
 
 	public override void Death()

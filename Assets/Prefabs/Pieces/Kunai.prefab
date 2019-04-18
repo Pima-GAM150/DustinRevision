@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2736654418123415434}
   - component: {fileID: 2653007805629749139}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Kunai
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5478046799421756453}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.1065102, y: -0.18039322, z: 0.61851597}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5273445940402948026}
@@ -45,7 +45,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoveTarget: {fileID: 0}
+  AnimationController: {fileID: 0}
   MyType: 5
+  MyColor: 0
+--- !u!64 &6337367420342623489
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9184056784487675305}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 1865056248366311061, guid: dcd7be53b8c493c4fb107ee1e264c0b4, type: 3}
 --- !u!1001 &888827513527610528
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -57,6 +73,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Kunai
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: dcd7be53b8c493c4fb107ee1e264c0b4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: dcd7be53b8c493c4fb107ee1e264c0b4,
         type: 3}
@@ -115,6 +136,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dcd7be53b8c493c4fb107ee1e264c0b4, type: 3}
+--- !u!1 &9184056784487675305 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: dcd7be53b8c493c4fb107ee1e264c0b4,
+    type: 3}
+  m_PrefabInstance: {fileID: 888827513527610528}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5273445940402948026 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: dcd7be53b8c493c4fb107ee1e264c0b4,

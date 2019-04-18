@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5622615536366249930}
   - component: {fileID: 966398394198210341}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Shuriken
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1338065773024595093}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.1065102, y: -0.18039322, z: 0.61851597}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7536506926476217296}
@@ -45,7 +45,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoveTarget: {fileID: 0}
+  AnimationController: {fileID: 0}
   MyType: 6
+  MyColor: 0
+--- !u!64 &6043312617417941677
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6830927946215340483}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 1865056248366311061, guid: 2c2d2b4432acc0c4794af9657e1b0a94, type: 3}
 --- !u!1001 &3309505604568703178
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -57,6 +73,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Shuriken
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 2c2d2b4432acc0c4794af9657e1b0a94,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 2c2d2b4432acc0c4794af9657e1b0a94,
         type: 3}
@@ -115,6 +136,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c2d2b4432acc0c4794af9657e1b0a94, type: 3}
+--- !u!1 &6830927946215340483 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 2c2d2b4432acc0c4794af9657e1b0a94,
+    type: 3}
+  m_PrefabInstance: {fileID: 3309505604568703178}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7536506926476217296 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 2c2d2b4432acc0c4794af9657e1b0a94,

@@ -23,14 +23,23 @@ public class CameraMovement : MonoBehaviour
     
 	private void Update()
 	{
-        
+		CheckForMovement();
+		CheckForRotation();
 	}
-	
+
 	#endregion
-	
+
 	#region My Functions
-	
-	
-	
+
+	private void CheckForRotation()
+	{
+
+	}
+
+	private void CheckForMovement()
+	{
+
+	}
+
 	#endregion
 }

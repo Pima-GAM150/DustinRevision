@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5805900426475057693}
   - component: {fileID: 2240059456525145474}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Ninja
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,3 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79e718bcae44ef74182863d8f0dfaba3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MoveTarget: {fileID: 0}
+  AnimationController: {fileID: 0}
+  MyType: 0
+  MyColor: 0
