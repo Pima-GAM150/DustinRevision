@@ -8,6 +8,8 @@ public class Board : MonoBehaviour
 
 	public static Board Instance;
 
+	public BoardResetEvent ResettingBoard;
+
 	public GameObject BlackSpacePrefab , WhiteSpacePrefab;
 
 	public Transform StartingPositionBoard;
@@ -226,6 +228,9 @@ public class Board : MonoBehaviour
 	public void ResetBoard()
 	{
 		Debug.Log("resetting board");
+
+		ResettingBoard?.Invoke();
+
 		foreach (GameObject obj in WhitePieces)
 		{
 			Destroy(obj);
@@ -242,4 +247,13 @@ public class Board : MonoBehaviour
 	}
 	
 	#endregion
+}
+
+namespace UnityEngine.Dustin
+{
+	[System.Serializable]
+	public class BoardResetEvent: Events.UnityEvent
+	{
+
+	}
 }

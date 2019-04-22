@@ -1,13 +1,17 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.Dustin;
 
 public class ChessPieceBase : MonoBehaviour
 {
 	#region Variables
 
+	public MoveEvent IMoved;
+
 	public Transform MoveTarget;
 
 	public Animator AnimationController;
+	
 
 	public PieceType MyType;
 
@@ -37,9 +41,10 @@ public class ChessPieceBase : MonoBehaviour
 
 	public virtual void Death()
 	{
-
+		this.gameObject.SetActive(false);
 	}
-	
+
+
 	#endregion
 }
 
@@ -59,5 +64,11 @@ namespace UnityEngine.Dustin
 	{
 		Black,
 		White
+	}
+
+	[System.Serializable]
+	public class MoveEvent : Events.UnityEvent
+	{
+
 	}
 }

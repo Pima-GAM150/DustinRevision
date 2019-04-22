@@ -35,12 +35,23 @@ public class Scroll : ChessPieceBase
 	{
 		base.Move(target);
 
-		return true;
+		if (target.position.x + transform.position.x == target.position.y + transform.position.y)
+		{
+			transform.position = target.position;
+
+			//pieceSnap.Play();
+
+			return true;
+		}
+		else
+		{
+			return false;
+		}
 	}
 
 	public override bool Attack(Transform target)
 	{
-		base.Move(target);
+		base.Attack(target);
 
 		return true;
 	}
