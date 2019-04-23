@@ -245,6 +245,32 @@ public class Board : MonoBehaviour
 
 		InstantiatePieces();
 	}
+
+	/// <summary>
+	/// if the Gameobject that has been captured is in one of the lists remove it and return;
+	/// </summary>
+	/// <param name="go"></param>
+	public void RemovePiece(GameObject go)
+	{
+		foreach (GameObject obj in WhitePieces)
+		{
+			if(obj==go)
+			{
+				WhitePieces.Remove(go);
+
+				return;
+			}
+		}
+		foreach (GameObject obj in BlackPieces)
+		{
+			if(obj == go)
+			{
+				BlackPieces.Remove(go);
+
+				return;
+			}
+		}
+	}
 	
 	#endregion
 }

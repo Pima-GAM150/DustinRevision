@@ -31,32 +31,61 @@ public class Scroll : ChessPieceBase
 
 	#region My Functions
 
+	/// <summary>
+	/// 
+	/// </summary>
+	/// <param name="target"></param>
+	/// <returns></returns>
 	public override bool Move(Transform target)
 	{
 		base.Move(target);
 
-		if (target.position.x + transform.position.x == target.position.y + transform.position.y)
+		if ((target.localPosition.x + transform.localPosition.x == target.localPosition.y + transform.localPosition.y))
 		{
-			transform.position = target.position;
-
-			//pieceSnap.Play();
+			transform.localPosition = new Vector3(target.localPosition.x, transform.localPosition.y, target.localPosition.z);
 
 			return true;
 		}
-		else
-		{
-			return false;
-		}
+
+		return false;
 	}
 
+	/// <summary>
+	/// 
+	/// </summary>
+	/// <param name="target"></param>
+	/// <returns></returns>
 	public override bool Attack(Transform target)
 	{
 		base.Attack(target);
 
-		return true;
+		if ((transform.localPosition.x + 3 == target.localPosition.x && transform.localPosition.z + 3 == target.localPosition.z)
+		 || (transform.localPosition.x - 3 == target.localPosition.x && transform.localPosition.z + 3 == target.localPosition.z)
+		 || (transform.localPosition.x + 3 == target.localPosition.x && transform.localPosition.z - 3 == target.localPosition.z)
+		 || (transform.localPosition.x - 3 == target.localPosition.x && transform.localPosition.z - 3 == target.localPosition.z))
+		{
+			transform.localPosition = new Vector3(target.localPosition.x, transform.localPosition.y, target.localPosition.z);
+
+			target.GetComponentInParent<ChessPieceBase>().Death();
+
+			return true;
+		}
+
+		return false;
 	}
 
+	/// <summary>
+	/// 
+	/// </summary>
 	public override void Death()
+	{
+		base.Death();
+	}
+
+	/// <summary>
+	/// 
+	/// </summary>
+	public override void HighlightMoves()
 	{
 
 	}

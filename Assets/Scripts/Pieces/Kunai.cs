@@ -31,21 +31,62 @@ public class Kunai : ChessPieceBase
 
 	#region My Functions
 
+	/// <summary>
+	/// 
+	/// </summary>
+	/// <param name="target"></param>
+	/// <returns></returns>
 	public override bool Move(Transform target)
 	{
 		base.Move(target);
 
-		return true;
+		if ((transform.localPosition.x == target.localPosition.x && transform.localPosition.y + 2 == target.localPosition.y)
+		 || (transform.localPosition.x == target.localPosition.x && transform.localPosition.y - 2 == target.localPosition.y))
+		{
+			transform.localPosition = new Vector3(target.localPosition.x, transform.localPosition.y, target.localPosition.z);
+
+			return true;
+		}
+
+		return false;
 	}
 
+	/// <summary>
+	/// 
+	/// </summary>
+	/// <param name="target"></param>
+	/// <returns></returns>
 	public override bool Attack(Transform target)
 	{
 		base.Move(target);
 
-		return true;
+		if (transform.localPosition.z + 1 == target.localPosition.z && target.localPosition.x == transform.localPosition.x + 2
+		|| transform.localPosition.z + 1 == target.localPosition.z && target.localPosition.x == transform.localPosition.x - 2
+		|| transform.localPosition.z - 1 == target.localPosition.z && target.localPosition.x == transform.localPosition.x + 2
+		|| transform.localPosition.z - 1 == target.localPosition.z && target.localPosition.x == transform.localPosition.x - 2)
+		{
+			transform.localPosition = new Vector3(target.localPosition.x, transform.localPosition.y, target.localPosition.z);
+
+			target.GetComponentInParent<ChessPieceBase>().Death();
+
+			return true;
+		}
+
+		return false;
 	}
 
+	/// <summary>
+	/// 
+	/// </summary>
 	public override void Death()
+	{
+		base.Death();
+	}
+
+	/// <summary>
+	/// 
+	/// </summary>
+	public override void HighlightMoves()
 	{
 
 	}

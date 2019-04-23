@@ -11,7 +11,8 @@ public class ChessPieceBase : MonoBehaviour
 	public Transform MoveTarget;
 
 	public Animator AnimationController;
-	
+
+	public AudioSource PieceSnap;
 
 	public PieceType MyType;
 
@@ -29,6 +30,8 @@ public class ChessPieceBase : MonoBehaviour
 	{
 		Debug.LogFormat("Name:{0} Color:{1} Type:{2}\n",this.name,this.MyColor,this.MyType);
 
+		PieceSnap.Play();
+
 		return true;
 	}
 
@@ -36,14 +39,26 @@ public class ChessPieceBase : MonoBehaviour
 	{
 		Debug.LogFormat("Name:{0} Pos:{1}", target.name, target.position);
 
+		PieceSnap.Play();
+
 		return true;
 	}
 
 	public virtual void Death()
 	{
-		this.gameObject.SetActive(false);
+
+		Debug.LogFormat("Name:{0} Color:{1} Type:{2}\n", this.name, this.MyColor, this.MyType);
+
+		Board.Instance.RemovePiece(this.GetComponentInParent<GameObject>());
+
+		Destroy(this.gameObject);
+		
 	}
 
+	public virtual void HighlightMoves()
+	{
+
+	}
 
 	#endregion
 }
