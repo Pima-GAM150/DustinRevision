@@ -40,10 +40,10 @@ public class Caltrops : ChessPieceBase
 	{
 		base.Move(target);
 
-		if ((transform.localPosition.x == target.localPosition.x && transform.localPosition.y + 1 == target.localPosition.y)
-		 || (transform.localPosition.x == target.localPosition.x && transform.localPosition.y - 1 == target.localPosition.y)
-		 || (transform.localPosition.y == target.localPosition.y && transform.localPosition.x - 1 == target.localPosition.x)
-		 || (transform.localPosition.y == target.localPosition.y && transform.localPosition.x + 1 == target.localPosition.x))
+		if ((transform.localPosition.x == target.localPosition.x && transform.localPosition.z + 1 == target.localPosition.z)
+		 || (transform.localPosition.x == target.localPosition.x && transform.localPosition.z - 1 == target.localPosition.z)
+		 || (transform.localPosition.z == target.localPosition.z && transform.localPosition.x - 1 == target.localPosition.x)
+		 || (transform.localPosition.z == target.localPosition.z && transform.localPosition.x + 1 == target.localPosition.x))
 		{
 			transform.localPosition = new Vector3(target.localPosition.x, transform.localPosition.y, target.localPosition.z);
 
@@ -62,14 +62,14 @@ public class Caltrops : ChessPieceBase
 	{
 		base.Move(target);
 
-		if ((transform.localPosition.x == target.localPosition.x && transform.localPosition.y + 1 == target.localPosition.y)
-		 || (transform.localPosition.x == target.localPosition.x && transform.localPosition.y - 1 == target.localPosition.y)
-		 || (transform.localPosition.y == target.localPosition.y && transform.localPosition.x - 1 == target.localPosition.x)
-		 || (transform.localPosition.y == target.localPosition.y && transform.localPosition.x + 1 == target.localPosition.x)
-		 || (transform.localPosition.x == target.localPosition.x && transform.localPosition.y + 2 == target.localPosition.y)
-		 || (transform.localPosition.x == target.localPosition.x && transform.localPosition.y - 2 == target.localPosition.y)
-		 || (transform.localPosition.y == target.localPosition.y && transform.localPosition.x - 2 == target.localPosition.x)
-		 || (transform.localPosition.y == target.localPosition.y && transform.localPosition.x + 2 == target.localPosition.x))
+		if ((transform.localPosition.x == target.localPosition.x && transform.localPosition.z + 1 == target.localPosition.z)
+		 || (transform.localPosition.x == target.localPosition.x && transform.localPosition.z - 1 == target.localPosition.z)
+		 || (transform.localPosition.z == target.localPosition.z && transform.localPosition.x - 1 == target.localPosition.x)
+		 || (transform.localPosition.z == target.localPosition.z && transform.localPosition.x + 1 == target.localPosition.x)
+		 || (transform.localPosition.x == target.localPosition.x && transform.localPosition.z + 2 == target.localPosition.z)
+		 || (transform.localPosition.x == target.localPosition.x && transform.localPosition.z - 2 == target.localPosition.z)
+		 || (transform.localPosition.z == target.localPosition.z && transform.localPosition.x - 2 == target.localPosition.x)
+		 || (transform.localPosition.z == target.localPosition.z && transform.localPosition.x + 2 == target.localPosition.x))
 		{
 			transform.localPosition = new Vector3(target.localPosition.x, transform.localPosition.y, target.localPosition.z);
 

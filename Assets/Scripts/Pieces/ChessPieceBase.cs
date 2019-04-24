@@ -49,7 +49,7 @@ public class ChessPieceBase : MonoBehaviour
 
 		Debug.LogFormat("Name:{0} Color:{1} Type:{2}\n", this.name, this.MyColor, this.MyType);
 
-		Board.Instance.RemovePiece(this.GetComponentInParent<GameObject>());
+		Board.Instance.RemovePiece(this.gameObject);
 
 		Destroy(this.gameObject);
 		

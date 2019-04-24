@@ -248,6 +248,8 @@ public class Board : MonoBehaviour
 
 	/// <summary>
 	/// if the Gameobject that has been captured is in one of the lists remove it and return;
+	/// 
+	/// go is the game object to be removed
 	/// </summary>
 	/// <param name="go"></param>
 	public void RemovePiece(GameObject go)
@@ -279,6 +281,11 @@ namespace UnityEngine.Dustin
 {
 	[System.Serializable]
 	public class BoardResetEvent: Events.UnityEvent
+	{
+
+	}
+	[System.Serializable]
+	public class TurnChangedEvent : Events.UnityEvent<string>
 	{
 
 	}

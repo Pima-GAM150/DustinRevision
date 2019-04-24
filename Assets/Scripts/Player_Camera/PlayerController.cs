@@ -13,6 +13,8 @@ public class PlayerController : MonoBehaviour
 	private GameObject Target;
 	private Vector3 MousePos;
 	private string Turn;
+
+	public TurnChangedEvent TurnChanged;
 	public bool Moved, Captured;
 	public Text TurnText;
 	public Board TheBoard;
@@ -29,19 +31,21 @@ public class PlayerController : MonoBehaviour
 		Moved = true;
 		TurnText.text = Turn;
 	}
-	
+
 	private void Update()
 	{
-		
+		if (Selected != null)
+		{
+			CheckForMovementSelection();
+
+			CheckForCaptureSelection();
+
+			TurnText.text = Turn;
+		}
+
 		CheckForPieceSelection();
-
-		CheckForMovementSelection();
-
-		CheckForCaptureSelection();
-
-		TurnText.text = Turn;
 	}
-	
+
 	#endregion
 
 	#region My Functions
@@ -55,31 +59,30 @@ public class PlayerController : MonoBehaviour
 	/// </summary>
 	private void CheckForPieceSelection()
 	{
-		if (Camera.main)
+		if (Input.GetMouseButtonDown(0))
 		{
-			if (Input.GetMouseButtonDown(0))
+			if (EventSystem.current.IsPointerOverGameObject())
 			{
-				if(EventSystem.current.IsPointerOverGameObject())
+				Debug.Log("Blocked by ui");
+
+				return;
+			}
+
+			var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+			if (Physics.Raycast(ray, out var hit, Mathf.Infinity, Pieces))
+			{
+				var piece = hit.transform.GetComponentInParent<ChessPieceBase>();
+
+				if (piece.MyColor.ToString().CompareTo(Turn) == 0)
 				{
-					Debug.Log("Blocked by ui");
-					return;
-				}
+					Selected = piece.gameObject;
 
-				var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-				if (Physics.Raycast(ray, out var hit, Mathf.Infinity, Pieces))
-				{
-					var piece = hit.transform.GetComponentInParent<ChessPieceBase>();
-
-					if (piece.MyColor.ToString().CompareTo(Turn) == 0)
-					{
-						Selected = piece.gameObject;
-						
-						Moved = false;
-					}
+					Moved = false;
 				}
 			}
 		}
+
 	}
 
 	/// <summary>
@@ -89,30 +92,33 @@ public class PlayerController : MonoBehaviour
 	/// </summary>
 	private void CheckForMovementSelection()
 	{
-		if (Camera.main)
+		if (Input.GetMouseButtonDown(0) && !Moved)
 		{
-			if (Input.GetMouseButtonDown(0))
+			if (EventSystem.current.IsPointerOverGameObject())
 			{
-				if (EventSystem.current.IsPointerOverGameObject())
+				Debug.Log("Blocked by ui");
+				return;
+			}
+
+			var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+			Debug.DrawRay(ray.origin, ray.direction, Color.green, 3);
+
+			if (Physics.Raycast(ray, out var hit, Mathf.Infinity, Spaces) && !Moved && Selected != null)
+			{
+				Moved = Selected.GetComponent<ChessPieceBase>().Move(hit.transform);
+
+				if (Turn == "White" && Moved)
 				{
-					Debug.Log("Blocked by ui");
-					return;
+					Turn = "Black";
+
+					TurnChanged?.Invoke(Turn);
 				}
-
-				var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-				if (Physics.Raycast(ray, out var hit, Mathf.Infinity, Spaces) && !Moved && Selected != null) 
+				else if (Turn == "Black" && Moved)
 				{
-					Moved = Selected.GetComponent<ChessPieceBase>().Move(hit.transform);
-					
-					if (Turn == "White" && Moved)
-					{
-						Turn = "Black";
-					}
-					else if(Turn == "Black" && Moved)
-					{
-						Turn = "White";
-					}
+					Turn = "White";
+
+					TurnChanged?.Invoke(Turn);
 				}
 			}
 		}
@@ -125,36 +131,38 @@ public class PlayerController : MonoBehaviour
 	/// </summary>
 	private void CheckForCaptureSelection()
 	{
-		if (Camera.main)
+		if (Input.GetMouseButtonDown(0) && !Moved)
 		{
-			if (Input.GetMouseButtonDown(0))
+			if (EventSystem.current.IsPointerOverGameObject())
 			{
-				if (EventSystem.current.IsPointerOverGameObject())
-				{
-					Debug.Log("Blocked by ui");
-					return;
-				}
+				Debug.Log("Blocked by ui");
+				return;
+			}
 
-				var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+			var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-				if (Physics.Raycast(ray, out var hit, Mathf.Infinity, Pieces) && !Moved && Selected != null)
+			if (Physics.Raycast(ray, out var hit, Mathf.Infinity, Pieces) && !Moved && Selected != null)
+			{
+				if (hit.transform.GetComponentInParent<ChessPieceBase>().MyColor != Selected.GetComponent<ChessPieceBase>().MyColor)
 				{
-					if (hit.transform.GetComponentInParent<ChessPieceBase>().MyColor != Selected.GetComponent<ChessPieceBase>().MyColor)
+					Captured = Selected.GetComponent<ChessPieceBase>().Attack(hit.transform);
+
+					if (Turn == "White" && Captured)
 					{
-						Captured = Selected.GetComponent<ChessPieceBase>().Attack(hit.transform);
+						Turn = "Black";
 
-						if (Turn == "White" && Captured)
-						{
-							Turn = "Black";
-						}
-						else if (Turn == "Black" && Captured)
-						{
-							Turn = "White";
-						}
+						TurnChanged?.Invoke(Turn);
+					}
+					else if (Turn == "Black" && Captured)
+					{
+						Turn = "White";
+
+						TurnChanged?.Invoke(Turn);
 					}
 				}
 			}
 		}
+
 	}
 	
 	#endregion

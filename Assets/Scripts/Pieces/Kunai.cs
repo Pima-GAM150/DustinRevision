@@ -40,8 +40,8 @@ public class Kunai : ChessPieceBase
 	{
 		base.Move(target);
 
-		if ((transform.localPosition.x == target.localPosition.x && transform.localPosition.y + 2 == target.localPosition.y)
-		 || (transform.localPosition.x == target.localPosition.x && transform.localPosition.y - 2 == target.localPosition.y))
+		if ((transform.localPosition.x + 2 == target.localPosition.x && transform.localPosition.z == target.localPosition.z)
+		 || (transform.localPosition.x - 2 == target.localPosition.x && transform.localPosition.z == target.localPosition.z))
 		{
 			transform.localPosition = new Vector3(target.localPosition.x, transform.localPosition.y, target.localPosition.z);
 

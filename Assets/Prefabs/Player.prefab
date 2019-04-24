@@ -97,6 +97,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5945517d07ab27848907299e8286eab3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MovementSpeed: 2
+  CameraSensitivity: 50
+  WhiteBoardView: {x: -47, y: 30, z: -32}
+  BlackBoardView: {x: 42, y: 30, z: 22}
+  TopDownView: {x: 4, y: 100, z: 0}
+  rotX: 0
+  rotY: 0
 --- !u!114 &3812678520008397663
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -109,5 +116,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 660c774ecbc88e741ae6f0b7cbed62fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Selected: {fileID: 0}
+  TurnChanged:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 9065069737524810627}
+        m_MethodName: OnTurnChanged
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Dustin.TurnChangedEvent, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  Moved: 0
+  Captured: 0
   TurnText: {fileID: 0}
   TheBoard: {fileID: 0}
+  Pieces:
+    serializedVersion: 2
+    m_Bits: 512
+  Spaces:
+    serializedVersion: 2
+    m_Bits: 1024

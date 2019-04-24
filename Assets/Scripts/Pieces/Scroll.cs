@@ -40,7 +40,7 @@ public class Scroll : ChessPieceBase
 	{
 		base.Move(target);
 
-		if ((target.localPosition.x + transform.localPosition.x == target.localPosition.y + transform.localPosition.y))
+		if ((target.localPosition.x + transform.localPosition.x == target.localPosition.z + transform.localPosition.z))
 		{
 			transform.localPosition = new Vector3(target.localPosition.x, transform.localPosition.y, target.localPosition.z);
 
