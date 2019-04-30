@@ -78,6 +78,8 @@ public class PlayerController : MonoBehaviour
 				{
 					Selected = piece.gameObject;
 
+					piece.HighlightMoves();
+
 					Moved = false;
 				}
 			}

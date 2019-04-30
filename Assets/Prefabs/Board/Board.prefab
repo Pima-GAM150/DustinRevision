@@ -137,6 +137,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50e39c4d32acb3146bef543a6b7a1b2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ResettingBoard:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Dustin.BoardResetEvent, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   BlackSpacePrefab: {fileID: 5887773600998616854, guid: 1dc579f0a4067e64090d3e8da54c20d2,
     type: 3}
   WhiteSpacePrefab: {fileID: 5887773600998616854, guid: 81bdfa45e39c76f4e9343d26b6a6a46d,
@@ -146,8 +151,8 @@ MonoBehaviour:
   Pieces:
   - {fileID: 5478046799421756453, guid: 09c5cfe2ddadfa245936f911ca4feee2, type: 3}
   - {fileID: 1338065773024595093, guid: 0ff1ee045530e1d4788bc69166843aaf, type: 3}
-  - {fileID: 8600485897839777150, guid: daec4b932768268478166b4b0968949e, type: 3}
   - {fileID: 7370425517777193794, guid: 0d1bf7ce82bc6ab4786e685e75d88297, type: 3}
+  - {fileID: 8600485897839777150, guid: daec4b932768268478166b4b0968949e, type: 3}
   - {fileID: 5579492174991380854, guid: 8ecc2ce7ec72d064a866300ac22d57c8, type: 3}
   - {fileID: 3532944824548086894, guid: 3c6e71df9f307724cba40c795c643326, type: 3}
   - {fileID: 2033685280761248199, guid: 53cd003bf4c0c1440a4212bc929167d3, type: 3}

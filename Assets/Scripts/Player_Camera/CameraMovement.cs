@@ -84,12 +84,16 @@ public class CameraMovement : MonoBehaviour
 			case "White":
 
 				transform.position = WhiteBoardView;
-				
+
+				Board.Instance.TurnOffHighlightedMoves();
+
 				break;
 
 			case "Black":
 
 				transform.position = BlackBoardView;
+
+				Board.Instance.TurnOffHighlightedMoves();
 
 				break;
 

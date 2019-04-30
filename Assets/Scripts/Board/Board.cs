@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Dustin;
 
@@ -45,7 +46,12 @@ public class Board : MonoBehaviour
 
 		Instance = this;
 	}
-		
+
+	private void Start()
+	{
+		TurnOffHighlightedMoves();
+	}
+
 	#endregion
 
 	#region My Functions
@@ -123,6 +129,17 @@ public class Board : MonoBehaviour
 				}
 
 			}
+		}
+	}
+
+	/// <summary>
+	/// turns off highlighted moves when the turn changes
+	/// </summary>
+	public void TurnOffHighlightedMoves()
+	{
+		foreach(GameObject space in Spaces)
+		{
+			space.GetComponentInChildren<ParticleSystem>().Stop();
 		}
 	}
 
