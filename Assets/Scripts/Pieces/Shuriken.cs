@@ -58,9 +58,9 @@ public class Shuriken : ChessPieceBase
 			foreach (GameObject enemy in enemies)
 			{
 				if (((transform.localPosition.x + 2 == enemy.transform.localPosition.x && target.localPosition.z + 2 == enemy.transform.localPosition.z)
-				 || target.localPosition.x + 2 == enemy.transform.localPosition.x && target.localPosition.z - 2 == enemy.transform.localPosition.z)
-				 || target.localPosition.x - 2 == enemy.transform.localPosition.x && target.localPosition.z + 2 == enemy.transform.localPosition.z)
-				 || target.localPosition.x - 2 == enemy.transform.localPosition.x && target.localPosition.z - 2 == enemy.transform.localPosition.z)))
+				 || (target.localPosition.x + 2 == enemy.transform.localPosition.x && target.localPosition.z - 2 == enemy.transform.localPosition.z)
+				 || (target.localPosition.x - 2 == enemy.transform.localPosition.x && target.localPosition.z + 2 == enemy.transform.localPosition.z)
+				 || (target.localPosition.x - 2 == enemy.transform.localPosition.x && target.localPosition.z - 2 == enemy.transform.localPosition.z)))
 				{
 					if (enemy.transform.localPosition.x == target.localPosition.x
 					  && enemy.transform.localPosition.z == target.localPosition.z)
