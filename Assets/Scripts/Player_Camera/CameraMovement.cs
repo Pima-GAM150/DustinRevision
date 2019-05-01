@@ -34,6 +34,7 @@ public class CameraMovement : MonoBehaviour
 	{
 		CheckForMovement();
 		CheckForRotation();
+		CheckForElevation();
 	}
 
 	#endregion
@@ -52,12 +53,10 @@ public class CameraMovement : MonoBehaviour
 		rotX = Input.GetAxis("Mouse X") * Time.deltaTime * CameraSensitivity;
 		
 		rotY = Input.GetAxis("Mouse Y") * Time.deltaTime * CameraSensitivity;
-
-		rotY = Mathf.Clamp(rotY, -90, 50);
-
-		transform.localRotation *= Quaternion.AngleAxis(rotX, Vector3.up);
-
-		transform.localRotation *= Quaternion.AngleAxis(rotY, Vector3.left);
+		
+		transform.rotation *= Quaternion.AngleAxis(rotX, Vector3.up);
+		
+		transform.rotation *= Quaternion.AngleAxis(rotY, Vector3.left);
 	}
 
 	/// <summary>
@@ -69,6 +68,21 @@ public class CameraMovement : MonoBehaviour
 	{
 		transform.position += transform.forward * MovementSpeed * Input.GetAxis("Vertical") * Time.deltaTime;
 		transform.position += transform.right * MovementSpeed * Input.GetAxis("Horizontal") * Time.deltaTime;
+	}
+
+	/// <summary>
+	/// 
+	/// </summary>
+	private void CheckForElevation()
+	{
+		if (Input.GetKey(KeyCode.E))
+		{
+			transform.position += transform.up * MovementSpeed * Time.deltaTime;
+		}
+		else if (Input.GetKey(KeyCode.Q))
+		{
+			transform.position -= transform.up * MovementSpeed * Time.deltaTime;
+		}
 	}
 
 	/// <summary>
